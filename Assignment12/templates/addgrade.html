@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Grade</title>
+</head>
+<body>
+    {% block content %}
+        <div>
+            <h1>Add Grade</h1>
+            <br/><br/>
+            <form action="/addgrade" METHOD="POST">
+                <label for="student">Choose a student:</label>
+                <select name="student" id="student">
+                    {% for students in students %}
+                    <option>{{ students.first_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="quiz">Choose a quiz:</label>
+                <select name="quiz" id="quiz">
+                    {% for quizzes in quizzes %}
+                    <option>{{ quizzes.subject }}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" placeholder="Score" name="score">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    {% endblock %}
+    </br></br>
+    <a href="/dashboard">Back Home</a>
+</body>
+</html>

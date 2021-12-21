@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h4 >
+        Welcome
+    </h4>
+    </br></br>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>FIRST NAME</th><th>LAST NAME</th></tr>
+        </thead>
+        <tbody>
+        {% for students in students %}
+            <tr><td>{{ students.id }}</td><td>{{ students.first_name }}</td><td>{{ students.last_name }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </br></br>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>SUBJECT</th><th>QUIZ</th><th>DATE</th></tr>
+        </thead>
+        <tbody>
+        {% for quizzes in quizzes %}
+            <tr><td>{{ quizzes.id }}</td><td>{{ quizzes.subject }}</td><td>{{ quizzes.num }}</td><td>{{ quizzes.date }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </br></br>
+    <table>
+        <thead>
+            <tr><th>STUDENT</th><th>SUBJECT</th><th>GRADE</th></tr>
+        </thead>
+        <tbody>
+        {% for scores in scores %}
+            <tr><td>{{ scores.student }}</td><td>{{ scores.subject }}</td><td>{{ scores.score }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </br></br>
+    <a href="/addstudent">Add a Student</a> <br>
+    <a href="/addquiz">Add a Quiz</a> <br>
+    <a href="/addgrade">Add a Grade</a>
+</body>
+</html>

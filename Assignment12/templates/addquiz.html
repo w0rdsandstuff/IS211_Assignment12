@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Quiz</title>
+</head>
+<body>
+    {% block content %}
+        <div>
+            <h1>Add Quiz</h1>
+            <br/><br/>
+            <form action="/addquiz" METHOD="POST">
+                <input type="text" placeholder="Subject" name="subject">
+                <input type="number" placeholder="Quiz" name="num">
+                <input type="date" placeholder="Date" name="date">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    {% endblock %}
+    </br></br>
+    <a href="/dashboard">Back Home</a>
+</body>
+</html>
